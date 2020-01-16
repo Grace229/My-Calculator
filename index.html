@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CALCULATOR</title>
+    <style>
+        body{
+            color: #267cbfbd;
+            background-color: #eeeeee;
+        }
+
+        button{
+        padding: 8px;
+        width: 80px;
+        margin-left: 30px;
+        background-color: #267cbfbd;
+
+        
+        }
+   
+    .input{
+        margin-left: 40px;
+        font-size: 20px;  
+    }
+    input{
+    
+    color: black;
+   padding: 10px;
+    }
+    section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+.flex{
+    height: 90%;
+    width: 30%;
+   color: #267cbfbd;
+  
+};
+.test{
+    height: 90%;
+    width: 50%;
+   color: #267cbfbd;
+}
+    </style>
+
+</head>
+<body>
+    <section>
+        <div class="flex" >
+            <h1>SQUARE CALCULATOR</h1>
+            <label>Number</label>
+            <input type="number" id="square" step=".01" ><br><br>
+            <div id="showsquare" class="input">Solution</div><br>  
+            <button onclick="squareNumber()">Calculate</button>
+          
+        </div>
+    
+    
+        <div class="flex">
+            <h1>HALF CALCULATOR</h1>
+            <label>Number</label>
+            <input type="number" step=".01" id="division" ><br><br>
+            <div id="half" class="input">Solution</div><br>
+            <button onclick="halfNumber()">Calculate</button>
+    
+          
+        </div>
+        <div class="flex">
+            <h1>PERCENTAGE CALCULATOR</h1>
+            <label>Number</label>
+            <input type="number" step=".01" id="percentage" ><br><br>
+            <label>Number</label>
+            <input type="number" step=".01" id="of" class="put"><br><br>
+            <div id="percent" class="input">Solution</div><br>
+            <button onclick="percentOf()">Calculate</button>
+        </div>
+    </section>
+    <section>
+        <div class="test">
+            <h1>AREA OF A CIRCLE CALCULATOR</h1>
+            <label>Radius</label>
+            <input type="number" step=".01" id="radius" ><br><br>
+            <div id="area" class="input">Solution</div><br>
+            <button onclick="circleArea()">Calculate</button>
+          
+        </div>
+        <div class="test"  style="margin-right: 100px;">
+            <h1>CALCULATOR</h1>
+            <label>Number</label>
+            <input type="number" step=".01"  id="number2" ><br><br>
+            <button onclick="calculateAll()">Calculate</button><br><br>
+            <div id="finalanswer" class="input" >Solution</div><br><br>
+            <div id="finalanswer1" class="input"></div><br>
+            <div id="finalanswer2" class="input"></div><br>
+            <div id="finalanswer3" class="input"></div><br>
+        </div>
+    </section>
+   
+
+    <script>
+    let squareNumber = () =>{
+  let number = document.getElementById("square").value;
+  let showsquare = document.getElementById("showsquare");
+  let result = number* number;
+  showsquare.textContent = `the square of ${number}, is ${result}`;
+    }
+
+  let halfNumber = () =>{
+  let num = document.getElementById("division").value;
+  let half = document.getElementById("half");
+  let answer = num/ 2;
+  half.textContent = `the half of ${num}, is ${answer}`;
+
+
+}
+let percentOf = () =>{
+    let numb = document.getElementById("percentage").value;
+    let nul = document.getElementById("of").value
+  let percent = document.getElementById("percent");
+  let answer1 =  ((numb/nul)*100);
+  percent.textContent = numb + " is " + answer1 + " % of " + nul;
+}
+
+let circleArea = () =>{
+    let numb2 = document.getElementById("radius").value;
+  let area = document.getElementById("area");
+  let answer2 =  (Math.PI * (numb2 * numb2)).toFixed(2); 
+  area.textContent = " The area of a circle with radius " + numb2 + " is " + answer2;
+}
+let calculateAll = () =>{
+    let num2 = document.getElementById("number2").value;
+    let finalanswer = document.getElementById("finalanswer");
+    let finalanswer1 = document.getElementById("finalanswer1");
+    let finalanswer2 = document.getElementById("finalanswer2");
+    let finalanswer3 = document.getElementById("finalanswer3");
+ let result5 = (num2/ 2);
+ finalanswer.textContent = " The half of " + num2 + " is " + result5;
+ let result6 = (result5* result5);
+ finalanswer1.textContent = " The square of " + result5 + " is " + result6;
+ let result7 =  (Math.PI * (result6 * result6)).toFixed(2);
+ finalanswer2.textContent = " The area of a circle with the radius " + result6 + " is " + result7;
+ let result8 =   ((result7/result6)*100).toFixed(2);
+ finalanswer3.textContent = result7 +  " is "  + result8 + " % of " + result6;
+
+}
+
+</script>
+
+</body>
+</html>
